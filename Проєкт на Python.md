@@ -1,42 +1,0 @@
-**Програма “Вгадай число”**
-
-**1\. Опис**
-
-Програма "Вгадай число" – це проста гра, в якій комп'ютер загадує випадкове число в діапазоні від 1 до 100, а користувач повинен вгадати це число. Програма надає підказки "Загадане число більше" або "Загадане число менше" після кожної спроби користувача.
-
-**2\. Вихідний код:**
-
-| import random  \# Імпортуємо модуль random для генерації випадкових чиселdef guess\_the\_number():  \# Визначаємо функцію guess\_the\_number, яка містить основну логіку гри  """  Гра "Вгадай число".  Комп'ютер загадує випадкове число, а користувач повинен його вгадати.  """  secret\_number \= random.randint(1, 100)  \# Генеруємо випадкове ціле число від 1 до 100 і зберігаємо його у змінну secret\_number  attempts \= 0  \# Ініціалізуємо змінну attempts для зберігання кількості спроб користувача  print("Ласкаво просимо до гри 'Вгадай число'\!")  \# Виводимо вітальне повідомлення для користувача  print("Я загадав число від 1 до 100\. Спробуйте вгадати.")  \# Виводимо інструкції для користувача  while True:  \# Запускаємо нескінченний цикл, який триває до тих пір, поки користувач не вгадає число    try:  \# Початок блоку try для обробки винятків      guess \= int(input("Ваша спроба: "))  \# Запитуємо користувача ввести число та перетворюємо його на ціле число      attempts \+= 1  \# Збільшуємо кількість спроб на 1      if guess \< secret\_number:  \# Якщо вгадане число менше загаданого        print("Загадане число більше.")  \# Виводимо повідомлення, що загадане число більше      elif guess \> secret\_number:  \# Якщо вгадане число більше загаданого        print("Загадане число менше.")  \# Виводимо повідомлення, що загадане число менше      else:  \# Якщо вгадане число дорівнює загаданому        print(f"Вітаю\! Ви вгадали число {secret\_number} з {attempts} спроб\!")  \# Виводимо повідомлення про перемогу        break  \# Виходимо з циклу    except ValueError:  \# Обробка винятку ValueError, який виникає, якщо користувач вводить не ціле число      print("Будь ласка, введіть ціле число.")  \# Виводимо повідомлення про помилкуif \_\_name\_\_ \== "\_\_main\_\_":  \# Перевіряємо, чи запускається скрипт як основна програма  guess\_the\_number()  \# Викликаємо функцію guess\_the\_number для запуску гри |
-| :---- |
-
-**4\. Використання:**
-
-1. Запустіть скрипт Python.  
-2. Слідуйте інструкціям на екрані, вводячи свої спроби вгадати число.  
-3. Програма надаватиме підказки, допоки ви не вгадаєте число.
-
-**5\. Структура програми:**
-
-* **import random:** Імпортує модуль random, який використовується для генерації випадкових чисел.  
-* guess\_the\_number(): Функція, що містить основну логіку гри.  
-  * Генерує випадкове число за допомогою random.randint(1, 100).  
-  * Ініціалізує лічильник спроб.  
-  * Запускає цикл while True, який триває до тих пір, поки користувач не вгадає число.  
-  * Обробляє введення користувача за допомогою try...except, щоб уникнути помилок, якщо користувач введе не ціле число.  
-  * Порівнює введене число з загаданим і виводить відповідні підказки.  
-  * Виводить повідомлення про перемогу, коли користувач вгадує число.  
-* if \_\_name\_\_ \== "\_\_main\_\_"**`:`**: Перевіряє, чи запускається скрипт як основна програма, і викликає функцію guess\_the\_number().
-
-**6\. Приклади використання:**
-
-| Ласкаво просимо до гри 'Вгадай число'\!Я загадав число від 1 до 100. Спробуйте вгадати.Ваша спроба: 50Загадане число менше.Ваша спроба: 25Загадане число більше.Ваша спроба: 37Загадане число менше.Ваша спроба: 31Вітаю\! Ви вгадали число 31 з 4 спроб\! |
-| :---- |
-
-**7\. Примітки:**
-
-* Програма використовує цикл while True, який завершується тільки тоді, коли користувач вгадує число.  
-* Використання try...except дозволяє обробляти помилки введення, коли користувач вводить не ціле число.
-
-[![][image1]](https://lucid.app/lucidchart/7d3ccce8-c052-44aa-84fd-f5d56ed8d2ea/edit?page=0&v=179&s=594)
-
-[image1]: <data:image/png;base64,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>
